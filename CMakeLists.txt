@@ -1,0 +1,1 @@
+add_executable( main 3n1.c)
