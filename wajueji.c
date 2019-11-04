@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-int main()
+int wajueji()
 {
     int count, school = 100001, score = 0;
     int sumSores[100002] = {0};
