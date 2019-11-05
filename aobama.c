@@ -24,10 +24,10 @@ int main(int argc, char const *argv[])
         {
             printf(" ");
         }
-        
+
         printf("%c\n", c);
     }
-    
+
     for (size_t i = 0; i < w; ++i)
     {
         printf("%c", c);
