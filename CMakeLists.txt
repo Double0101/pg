@@ -1,1 +1,1 @@
-add_executable( main fanhua.c)
+add_executable( main pat.c)
