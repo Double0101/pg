@@ -21,7 +21,7 @@ int candidate_cmp(candidate* c1, candidate* c2)
 candidate c[30000];
 int num[100] = {0};
 
-int main()
+int pat()
 {
     int l, j, k = 0, i = 0, rank = 1, lrank1[100] = {0}, lrank2[100] = {0}, lscore[100] = {0};
     scanf("%d", &l);
