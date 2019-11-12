@@ -14,7 +14,6 @@
     <list default="true" id="9539a7b3-2746-403a-82b7-3cff813719cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pat.c" beforeDir="false" afterPath="$PROJECT_DIR$/pat.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +85,7 @@
       <workItem from="1572793010580" duration="2283000" />
       <workItem from="1573051798051" duration="442000" />
       <workItem from="1573320395714" duration="732000" />
+      <workItem from="1573552703287" duration="2522000" />
     </task>
     <servers />
   </component>
@@ -127,6 +127,16 @@
           <url>file://$PROJECT_DIR$/pat.c</url>
           <line>28</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/yuebing.c</url>
+          <line>32</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/yuebing.c</url>
+          <line>31</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

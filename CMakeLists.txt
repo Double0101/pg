@@ -1,1 +1,1 @@
-add_executable( main pat.c)
+add_executable( main yuebing.c)
