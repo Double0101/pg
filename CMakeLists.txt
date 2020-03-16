@@ -1,1 +1,1 @@
-add_executable( main 1023.c)
+add_executable( main qjtx.c)

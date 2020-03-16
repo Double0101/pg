@@ -1,41 +1,57 @@
+/* 03.16.2020
+ * partial greedy
+ * Double0101
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct Line {
+    int x, y
+} Line;
 
-typedef struct inteval {
-    int x;
-    int y;
-} inteval;
-
-inteval I[100];
-
-int inteval_cmp(inteval *i1, inteval *i2)
+int cmp(Line *l1, Line *l2)
 {
-    if (i1->x != i2->x) return i2->x - i1->x;
-    else return i1->y - i2->y;
+    return (l1->x) - (l2->x);
 }
 
+Line *lines;
 
 int main()
 {
-    int n, i, count = 1, lastx;
-    scanf("%d", &n);
-
-    for (i = 0; i < n; ++i) {
-        scanf("%d %d", &I[i].x, &I[i].y);
+    int i, j = 0, count, *rs;
+    scanf("%d", &count);
+    rs = (int*) malloc(count * sizeof(int));
+    lines = (Line*) malloc(count * sizeof(Line));
+    for (i = 0; i < count; ++i)
+    {
+        rs[i] = 0;
+        scanf("%d%d", &lines[i].x, &lines[i].y);
     }
-    qsort(I, n, sizeof(inteval), inteval_cmp);
-
-    i = 1;
-    lastx = I[0].x;
-    while (i < n) {
-        if (I[i].y <= lastx) {
-            lastx = I[i].x;
-            ++count;
+    qsort(lines, count, sizeof(Line), cmp);
+    rs[0] = 1;
+    for (i = 1; i < count; ++i)
+    {
+        if (lines[i].x >= lines[j].y)
+        {
+            rs[i] = 1;
+            j = i;
+            continue;
         }
-        ++i;
+        if (lines[i].y < lines[j].y)
+        {
+            rs[j] = 0;
+            rs[i] = 1;
+            j = i;
+            continue;
+        }
     }
 
-    printf("%d\n", count);
+    for (i = 0; i < count; ++i)
+    {
+        if (rs[i])
+            printf("%d,%d\n", lines[i].x, lines[i].y);
+    }
     return 0;
 }
+
