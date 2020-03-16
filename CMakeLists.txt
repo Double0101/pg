@@ -1,1 +1,1 @@
-add_executable( main yuebing.c)
+add_executable( main 1023.c)
