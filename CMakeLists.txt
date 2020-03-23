@@ -1,3 +1,3 @@
 set ( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin )
 
-add_executable( main mergesort.c)
+add_executable( main quicksort.c)
