@@ -1,1 +1,1 @@
-add_executable( vec vec.cpp )
+add_executable( m str.cpp )
