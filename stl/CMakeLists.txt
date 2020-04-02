@@ -1,1 +1,1 @@
-add_executable( m str.cpp )
+add_executable( m algorithm.cpp )
