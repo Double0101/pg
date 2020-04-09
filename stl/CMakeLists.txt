@@ -1,1 +1,1 @@
-add_executable( m algorithm.cpp )
+#add_executable( m simcal.cpp )
