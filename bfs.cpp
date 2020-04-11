@@ -1,8 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include <string>
 #include <queue>
-#include <utility>
 
 #define MAXN 7
 
