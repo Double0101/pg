@@ -8,5 +8,5 @@ add_subdirectory( stl )
 
 #add_library(test test.c)
 
-add_executable( main treetraversals.cpp )
+add_executable( main pew.cpp )
 #target_link_libraries(main test)
