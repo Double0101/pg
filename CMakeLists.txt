@@ -8,5 +8,5 @@ add_subdirectory( stl )
 
 #add_library(test test.c)
 
-add_executable( main a1076.cpp )
+add_executable( main dijkstra.cpp )
 #target_link_libraries(main test)
