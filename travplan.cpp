@@ -16,9 +16,8 @@ vector<int> **paths;
 
 inline
 void changeway(int k, int cno) {
-    delete(paths[k]);
-    paths[k] = new vector<int>();
     vector<int> *p = paths[k];
+    p->clear();
     for (int j = 0; j < paths[cno]->size(); ++j) {
         p->push_back((*paths[cno])[j]);
     }
