@@ -8,5 +8,5 @@ add_subdirectory( stl )
 
 #add_library(test test.c)
 
-add_executable( main maxhw.cpp )
+add_executable( main dag.cpp )
 #target_link_libraries(main test)
