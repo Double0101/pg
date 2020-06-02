@@ -8,5 +8,5 @@ add_subdirectory( stl )
 
 #add_library(test test.c)
 
-add_executable( main 01bag.cpp )
+add_executable( main bag.cpp )
 #target_link_libraries(main test)
