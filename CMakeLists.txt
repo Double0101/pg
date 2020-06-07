@@ -5,6 +5,7 @@ project( pg )
 set ( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin )
 
 add_subdirectory( stl )
+add_subdirectory( pat )
 
 #add_library(test test.c)
 
