@@ -1,1 +1,1 @@
-add_executable( p a1101.c )
+add_executable( p b1008.c )
