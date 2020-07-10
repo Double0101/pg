@@ -1,1 +1,1 @@
-add_executable( p a1054.cpp )
+add_executable( p a1051.c )
