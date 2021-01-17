@@ -3,38 +3,70 @@
 
 using namespace std;
 
-struct line {
-    int id;
-    queue<int> q;
-    int nextTime;
-} qls[20];
+struct customer {
+    int sertime, start, end;
+} customers[1000];
+
+queue<int> cq[20];
 
 int wc, yc, cc, qc;
-int customers[1001] = {0};
-int done[1001] = {0};
-
-void printTime(int m)
-{
-    int mm = m % 60;
-    int hh = (m / 60) + 8;
-    if (hh > 17 || (hh == 17 && mm > 0)) printf("Sorry\n");
-    else printf("%02d:%d\n", hh, mm);
-}
 
 int main()
 {
-    for (int i = 0; i < 10; ++i) {
-        qls[i].id = i;
-        qls[i].nextTime = 0;
-    }
     scanf("%d%d%d%d", &wc, &yc, &cc, &qc);
-    for (int i = 1; i <= cc; ++i) {
-        scanf("%d", customers+i);
+    for (int i = 0; i < cc; ++i) {
+        scanf("%d", &customers[i].sertime);
     }
 
-    for (int i = 1; i <= cc; ++i) {
-
+    for (int i = 0; i < cc; ++i) {
+        if (i < wc*yc) {
+            cq[i%wc].push(i);
+            if (i < wc) {
+                customers[i].start = 0;
+                customers[i].end = customers[i].sertime;
+            }
+        } else {
+            int earlyw = 0;
+            int wintime = customers[cq[0].front()].end;
+            for (int j = 1; j < wc; ++j) {
+                if (customers[cq[j].front()].end < wintime) {
+                    earlyw = j;
+                    wintime = customers[cq[j].front()].end;
+                }
+            }
+            int cu = cq[earlyw].front();
+            cq[earlyw].pop();
+            customers[cq[earlyw].front()].start = customers[cu].end;
+            customers[cq[earlyw].front()].end =
+                    customers[cq[earlyw].front()].start
+                    + customers[cq[earlyw].front()].sertime;
+            cq[earlyw].push(i);
+        }
     }
+    for (int i = 0; i < wc; ++i) {
+        while (!cq[i].empty()) {
+            int cus = cq[i].front();
+            cq[i].pop();
+            if (!cq[i].empty()) {
+                int cus2 = cq[i].front();
+                customers[cus2].start = customers[cus].end;
+                customers[cus2].end = customers[cus2].start + customers[cus2].sertime;
+            }
+        }
+    }
+
+    customer *cp = customers-1;
+    for (int i = 0; i < qc; ++i) {
+        int cusid;
+        scanf("%d", &cusid);
+        customer ccc = cp[cusid];
+        if ((ccc.start/60)+8 >= 17)
+            printf("Sorry\n");
+        else {
+            printf("%02d:%02d\n", (ccc.end/60)+8, ccc.end%60);
+        }
+    }
+    
 
     return 0;
 }
