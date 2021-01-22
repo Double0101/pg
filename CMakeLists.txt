@@ -1,2 +1,2 @@
 project( pg )
-add_executable( a 19.cpp )
+add_executable( a 22.cpp )
