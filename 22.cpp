@@ -15,17 +15,6 @@ map<string, set<int>> yearm;
 
 int N;
 
-void print(map<string, set<int>> &m, string str)
-{
-    if (m.find(str) != m.end()) {
-        for (int i : m[str]) {
-            printf("%07d\n", i);
-        }
-    } else {
-        printf("Not Found\n");
-    }
-}
-
 int main()
 {
     scanf("%d", &N);
@@ -48,6 +37,12 @@ int main()
         yearm[year].insert(id);
     }
 
+    map<string, set<int>> *mp[5];
+    mp[0] = &namem;
+    mp[1] = &authorm;
+    mp[2] = &keywordm;
+    mp[3] = &publisherm;
+    mp[4] = &yearm;
     int t;
     scanf("%d", &t);
     for (int i = 0; i < t; ++i) {
@@ -56,11 +51,15 @@ int main()
         scanf("%d: ", &n);
         getline(cin, temp);
         cout << n << ": " << temp << endl;
-        if (n == 1) print(namem, temp);
-        else if (n == 2) print(authorm, temp);
-        else if (n == 3) print(keywordm, temp);
-        else if (n == 4) print(publisherm, temp);
-        else if (n == 5) print(yearm, temp);
+        if ((*(mp[n-1])).find(temp) != (*(mp[n-1])).end()) {
+            for (int i : (*mp[n-1])[temp]) {
+                printf("%07d\n", i);
+            }
+        } else {
+            printf("Not Found\n");
+        }
     }
+
+
     return 0;
 }
