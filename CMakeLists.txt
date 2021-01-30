@@ -1,3 +1,3 @@
 project(pg)
 SET(CMAKE_CXX_STANDARD 11)
-add_executable(a 40.cpp)
+add_executable(a 47.cpp)
