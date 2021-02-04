@@ -1,2 +1,3 @@
 project( pg )
-add_executable( a 33.cpp )
+set( CMAKE_CXX_STANDARD 11)
+add_executable( a 56.cpp )
