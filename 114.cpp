@@ -4,7 +4,6 @@
 
 using namespace std;
 typedef struct Family {
-    int f;
     int minid, tmem, testate, tarea;
 } Fam;
 bool cmp(Fam f1, Fam f2) {
@@ -63,7 +62,6 @@ int main()
     for (int i = 0; i < 10000; ++i) {
         if (father[i] == -1) continue;
         if (Father(i) == i) {
-            fam.f = i;
             fam.minid = 100000;
             fam.tarea = 0;
             fam.testate = 0;
